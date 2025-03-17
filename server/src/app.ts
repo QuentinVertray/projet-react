@@ -32,5 +32,5 @@ app.use( readPastries  )
 app.use(router);
 
 app.listen(port, () =>
-  console.log(`listen http://${APP_URL}:${port}`),
+  console.log(`listen https://${APP_URL}:${port}`),
 );
