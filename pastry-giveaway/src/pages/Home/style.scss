@@ -1,4 +1,4 @@
-// src/pages/Home/style.scss
+
 .home {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -26,4 +26,15 @@
 
 .home-pastries {
   margin-top: 20px;
+
+  .pastry-item {
+    display: inline-block;
+    margin: 10px;
+
+    img {
+      background-size: cover;
+      background-repeat: no-repeat;
+      object-fit: cover;
+    }
+  }
 }

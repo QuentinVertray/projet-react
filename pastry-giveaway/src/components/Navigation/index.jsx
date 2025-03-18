@@ -7,9 +7,9 @@ const Navigation = () => {
     return (
         <nav className="navigation">
             <ul>
-                <li><Link to="/">Accueil</Link></li>
-                <li><Link to="/login">Connexion</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/Home">Accueil</Link></li>
+                <li><Link to="/Login">Connexion</Link></li>
+                <li><Link to="/Contact">Contact</Link></li>
             </ul>
         </nav>
     );

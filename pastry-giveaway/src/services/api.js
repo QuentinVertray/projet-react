@@ -9,7 +9,7 @@ export const api = createApi({
     tagTypes: ['Pastry'],
     endpoints: (builder) => ({
         getPastries: builder.query({
-            query: () => 'api/pastries',
+            query: () => 'game/pastries',
             providesTags: ['Pastry'],
         }),
         login: builder.mutation({
