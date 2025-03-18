@@ -1,14 +1,15 @@
 // src/components/Navigation/index.jsx
 import React from 'react';
+import { Link } from 'react-router';
 import './style.scss';
 
 const Navigation = () => {
     return (
         <nav className="navigation">
             <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/login">Connexion</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><Link to="/">Accueil</Link></li>
+                <li><Link to="/login">Connexion</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
         </nav>
     );

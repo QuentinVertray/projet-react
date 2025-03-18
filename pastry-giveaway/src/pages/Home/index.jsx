@@ -1,20 +1,17 @@
 // src/pages/Home/index.jsx
 import React from 'react';
-import Navigation from '../../components/Navigation';
+import { Link } from 'react-router';
 import PastryList from '../../components/PastryList';
 import './style.scss';
 
 const Home = () => {
     return (
         <div className="home">
-            {/* Navigation en haut de la page */}
-            <Navigation />
-
             {/* Section Hero */}
             <section className="home-hero">
                 <h1>Bienvenue sur le jeu de la pâtisserie !</h1>
                 <p>Testez votre chance et remportez de délicieuses pâtisseries !</p>
-                <button className="play-button">Jouer</button>
+                <Link to="/play" className="play-button">Jouer</Link>
             </section>
 
             {/* Section Liste des Pâtisseries */}
