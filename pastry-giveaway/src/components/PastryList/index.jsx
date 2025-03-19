@@ -1,13 +1,10 @@
 // src/components/PastryList/index.jsx
 import React from 'react';
-import { useGetPastriesQuery } from '../../services/api';
+import { useSelector } from 'react-redux';
 import './style.scss';
 
 const PastryList = () => {
-    const { data: pastries, error, isLoading } = useGetPastriesQuery();
-
-    if (isLoading) return <div>Chargement des pâtisseries...</div>;
-    if (error) return <div>Erreur lors du chargement des pâtisseries</div>;
+    const pastries = useSelector(state => state.game.pastries);
 
     return (
         <div className="pastry-list">
@@ -15,7 +12,7 @@ const PastryList = () => {
                 pastries.map((pastry) => (
                     <div key={pastry.id} className="pastry-item">
                         <img
-                            src={pastry.imageUrl || 'https://via.placeholder.com/150'}
+                            src={pastry.imageUrl || 'https://placehold.co/300x200'}
                             alt={pastry.name}
                         />
                         <h3>{pastry.name}</h3>
@@ -30,3 +27,4 @@ const PastryList = () => {
 };
 
 export default PastryList;
+

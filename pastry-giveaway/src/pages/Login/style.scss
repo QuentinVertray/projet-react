@@ -1,64 +1,92 @@
-/* src/pages/Login/style.scss */
+// Réinitialisation CSS spécifique à cette page
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+// Styles spécifiques à la page de connexion
 .login-page {
   font-family: Arial, sans-serif;
-  padding: 20px;
+  padding: 0;
+  margin: 0;
   text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: auto; // Modifié
+  box-sizing: border-box;
+  padding-left: calc(100vw - 100%);
+}
 
+.login-hero {
+  background: #f5f5f5;
+  padding: 40px 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 
-  .login-hero {
-    background: #f5f5f5;
-    padding: 40px 20px;
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+  }
+}
+
+// Style pour le composant LoginForm
+.form-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: left;
+  box-sizing: border-box;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h3 {
+    margin-top: 0;
     margin-bottom: 20px;
-
-    h2 {
-      margin: 0;
-      font-size: 2rem;
-    }
+    text-align: center;
   }
 
-  .form-container {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    border: 1px solid #ddd;
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    background-color: #4f46e5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    padding: 20px;
-    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-    h3 {
-      margin-top: 0;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    input[type="email"],
-    input[type="password"] {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    button {
-      background-color: #4f46e5;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #4338ca;
-      }
+    &:hover {
+      background-color: #4338ca;
     }
   }
+}
+
+// Désactiver les bordures rouges de débogage
+* {
+  box-sizing: border-box;
+  // border: 1px solid red; // Commentez ou supprimez cette ligne pour désactiver les bordures rouges
 }

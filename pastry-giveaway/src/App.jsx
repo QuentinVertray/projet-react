@@ -19,7 +19,6 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/play" element={<Play />} />
             </Routes>
-            {/* </BrowserRouter> */}
         </Provider>
     </>
   )
