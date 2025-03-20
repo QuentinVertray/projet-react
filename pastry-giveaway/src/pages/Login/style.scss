@@ -1,49 +1,11 @@
-// Réinitialisation CSS spécifique à cette page
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
+.login-container {
+  margin-top: 100px;
 }
 
-// Styles spécifiques à la page de connexion
-.login-page {
-  font-family: Arial, sans-serif;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  width: auto; // Modifié
-  box-sizing: border-box;
-  padding-left: calc(100vw - 100%);
-}
-
-.login-hero {
-  background: #f5f5f5;
-  padding: 40px 20px;
-  margin-bottom: 20px;
-  width: 100%;
-  box-sizing: border-box;
-
-  h2 {
-    margin: 0;
-    font-size: 2rem;
-  }
-}
-
-// Style pour le composant LoginForm
 .form-container {
   width: 80%;
-  max-width: 600px;
   margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
   padding: 20px;
-  text-align: left;
-  box-sizing: border-box;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -85,8 +47,3 @@ body, html {
   }
 }
 
-// Désactiver les bordures rouges de débogage
-* {
-  box-sizing: border-box;
-  // border: 1px solid red; // Commentez ou supprimez cette ligne pour désactiver les bordures rouges
-}

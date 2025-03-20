@@ -27,4 +27,3 @@ const PastryList = () => {
 };
 
 export default PastryList;
-

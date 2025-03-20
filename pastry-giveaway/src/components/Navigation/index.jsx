@@ -1,18 +1,17 @@
 // src/components/Navigation/index.jsx
 import React from 'react';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 import './style.scss';
 
-const Navigation = () => {
-    return (
-        <nav className="navigation">
-            <ul>
-                <li><Link to="/Home">Accueil</Link></li>
-                <li><Link to="/Login">Connexion</Link></li>
-                <li><Link to="/Contact">Contact</Link></li>
-            </ul>
-        </nav>
-    );
-};
+const Navigation = () => (
+    <nav className="navigation">
+        <ul>
+            <li><NavLink to="/Home" activeclassname="active">Accueil</NavLink></li>
+            <li><NavLink to="/login" activeclassname="active">Connexion</NavLink></li>
+            <li><NavLink to="/contact" activeclassname="active">Contact</NavLink></li>
+        </ul>
+    </nav>
+);
 
 export default Navigation;
+

@@ -1,0 +1,116 @@
+.play-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+
+  .game-rules {
+    background-color: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    h3 {
+      margin-top: 0;
+      color: #333;
+    }
+    p {
+      margin: 0.5rem 0 0;
+    }
+  }
+
+  .dice-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    margin: 2rem 0;
+
+    .dice {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      &.rolling {
+        animation: roll 0.2s infinite;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  @keyframes roll {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .game-controls {
+    text-align: center;
+    margin-bottom: 2rem;
+    p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .roll-button {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      &:hover:not(:disabled) {
+        background-color: #2980b9;
+      }
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+    .game-result {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      border-radius: 8px;
+      &.win {
+        background-color: #d4edda;
+        color: #155724;
+      }
+      &.lose {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+      p {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      .won-pastry {
+        margin-top: 1rem;
+        h4 {
+          margin-bottom: 0.5rem;
+        }
+        img {
+          width: 300px;
+          height: auto;
+          margin-bottom: 0.5rem;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 // src/components/DiceRoll/index.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { rollDice, checkCombination } from '../../utils/gameLogic';
 import { winPastry, resetLastWonPastry } from '../../store/slices/gameSlice';
@@ -15,14 +15,14 @@ const DiceRoll = () => {
     const [dice, setDice] = useState([1, 1, 1, 1, 1]);
     const [result, setResult] = useState(null);
 
-    // Réinitialiser la dernière pâtisserie gagnée lors du démontage du composant
+    // Réinitialiser la dernière pâtisserie gagnée lors du démontage
     useEffect(() => {
         return () => {
             dispatch(resetLastWonPastry());
         };
     }, [dispatch]);
 
-    const handleRoll = () => {
+    const handleRoll = useCallback(() => {
         if (attempts <= 0) return;
 
         const newDice = rollDice();
@@ -33,18 +33,11 @@ const DiceRoll = () => {
 
         if (combination) {
             const quantity = combination === 'brelan' ? 1 : 2;
-
-            // Vérifier s'il reste des pâtisseries
             const availablePastries = pastries.filter(p => p.quantity > 0);
-
             if (availablePastries.length > 0) {
-                // Sélectionner une pâtisserie aléatoire parmi celles disponibles
                 const randomIndex = Math.floor(Math.random() * availablePastries.length);
                 const selectedPastry = availablePastries[randomIndex];
-
-                // Mettre à jour le store Redux
                 dispatch(winPastry({ pastryId: selectedPastry.id, quantity }));
-
                 setResult(`BRAVO, vous gagnez ${quantity} ${selectedPastry.name} !`);
             } else {
                 setResult('Désolé, il n\'y a plus de pâtisseries disponibles !');
@@ -52,7 +45,7 @@ const DiceRoll = () => {
         } else {
             setResult('PERDU, essayez encore.');
         }
-    };
+    }, [attempts, dispatch, pastries]);
 
     return (
         <div className="dice-roll">

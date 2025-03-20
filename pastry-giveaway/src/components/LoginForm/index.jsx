@@ -1,5 +1,5 @@
 // src/components/LoginForm/index.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLoginMutation } from '../../services/api';
 import { loginSuccess } from '../../store/slices/authSlice';
@@ -11,31 +11,23 @@ const LoginForm = () => {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-    // Utilisation du hook RTK Query
-    const [login, { isLoading, isError, error }] = useLoginMutation();
+    const [login, { isLoading }] = useLoginMutation();
 
-    // Réinitialiser le message d'erreur lorsque l'utilisateur modifie les champs
     useEffect(() => {
         if (errorMessage) setErrorMessage('');
-    }, [email, password]);
+    }, [email, password, errorMessage]);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = useCallback(async (e) => {
         e.preventDefault();
         try {
-            // Appel à l'API d'authentification
             const userData = await login({ email, password }).unwrap();
-            // Mise à jour du state global
             dispatch(loginSuccess(userData));
             console.log('Connexion réussie avec', email);
         } catch (err) {
-            // Gestion des erreurs
             console.error('Échec de connexion:', err);
-            setErrorMessage(
-                err.data?.message ||
-                'Identifiants incorrects. Veuillez réessayer.'
-            );
+            setErrorMessage(err.data?.message || 'Identifiants incorrects. Veuillez réessayer.');
         }
-    };
+    }, [dispatch, email, login, password]);
 
     return (
         <div className="form-container">

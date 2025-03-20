@@ -1,0 +1,167 @@
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+
+  .admin-actions {
+    margin-bottom: 2rem;
+
+    .add-button {
+      background-color: #27ae60;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      &:hover {
+        background-color: #218f54;
+      }
+    }
+  }
+
+  .pastry-form {
+    background-color: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        &:focus {
+          outline: none;
+          border-color: #666;
+        }
+      }
+
+      &.checkbox {
+        display: flex;
+        align-items: center;
+        label {
+          margin-bottom: 0;
+          margin-left: 0.5rem;
+        }
+        input[type="checkbox"] {
+          margin: 0;
+        }
+      }
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+
+      button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+
+        &.save-button {
+          background-color: #3498db;
+          color: #fff;
+          &:hover {
+            background-color: #2980b9;
+          }
+        }
+
+        &.cancel-button {
+          background-color: #e74c3c;
+          color: #fff;
+          &:hover {
+            background-color: #c0392b;
+          }
+        }
+      }
+    }
+  }
+
+  .pastries-list {
+    h3 {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: 600;
+      }
+
+      .no-image {
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        font-size: 0.8rem;
+        color: #666;
+      }
+
+      .edit-button,
+      .delete-button {
+        margin-right: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+      }
+
+      .edit-button {
+        background-color: #3498db;
+        color: #fff;
+        &:hover {
+          background-color: #2980b9;
+        }
+      }
+
+      .delete-button {
+        background-color: #e74c3c;
+        color: #fff;
+        &:hover {
+          background-color: #c0392b;
+        }
+      }
+    }
+  }
+}
