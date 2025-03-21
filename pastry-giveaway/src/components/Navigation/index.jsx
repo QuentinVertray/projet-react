@@ -6,7 +6,7 @@ import './style.scss';
 const Navigation = () => (
     <nav className="navigation">
         <ul>
-            <li><NavLink to="/Home" activeclassname="active">Accueil</NavLink></li>
+            <li><NavLink to="/" activeclassname="active">Accueil</NavLink></li>
             <li><NavLink to="/login" activeclassname="active">Connexion</NavLink></li>
             <li><NavLink to="/contact" activeclassname="active">Contact</NavLink></li>
         </ul>

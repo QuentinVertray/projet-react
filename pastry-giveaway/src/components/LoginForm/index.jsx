@@ -7,7 +7,7 @@ import './style.scss';
 
 const LoginForm = () => {
     const dispatch = useDispatch();
-    const [email, setEmail] = useState('alice@alice.fr');
+    const [email, setEmail] = useState(''); // Initialisation à vide
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -40,7 +40,7 @@ const LoginForm = () => {
                 <input
                     type="email"
                     id="email"
-                    placeholder="alice@alice.fr"
+                    placeholder="Votre e-mail"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={isLoading}
